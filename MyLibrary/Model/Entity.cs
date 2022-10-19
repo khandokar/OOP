@@ -20,7 +20,7 @@ namespace MyLibrary.Model
 
     public Entity()
     {
-      createTime = new DateTime();
+      createTime = DateTime.Now;
     }
 
     public bool IsNew
