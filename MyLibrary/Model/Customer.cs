@@ -14,10 +14,10 @@ namespace MyLibrary.Model
     {
 
     }
-    ~Customer()
-    {
-      Console.WriteLine("I am going to die");
-    }
+    //~Customer()
+    //{
+    //  Console.WriteLine("I am going to die");
+    //}
 
     public string Name { get => name; set => name = value; }
     public string Phone { get => phone; set => phone = value; }
@@ -26,6 +26,7 @@ namespace MyLibrary.Model
     public override void Print()
     {
       Console.WriteLine("Id - {0}, CreateDate-{1}, Name = {2}, Phone = {3}, Email ={4}", Id, CreateTime,name,phone,email);
+     
     }
   }
 }

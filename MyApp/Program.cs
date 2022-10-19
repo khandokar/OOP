@@ -19,9 +19,13 @@ namespace WinFormsApp1
       Application.SetCompatibleTextRenderingDefault(false);
       //Application.Run(new Form1());
 
+      Entity orderhead = new Orderhead();
+      orderhead.Print();
+
       Customer customer = new Customer();
-      
-      DataAccess dataAccess = DataAccessFactory.Create(DataSourceType.Cassardra);
+
+      DataAccess dataAccess = DataAccessFactory.Create(DataSourceType.MongoDB);
+ 
 
       dataAccess.Save(customer);
 
