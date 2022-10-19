@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "qJGcgk8ESfDqN4dAtBDYXCcw7nI57mWsl+eAaIcqr7o81gEFiEtlKKnSy257rydEobedu5v+Eo/brRyZvkSOtA==",
+  "success": true,
+  "projectFilePath": "D:\\Software\\Programs\\MyApp\\MyApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.data.sqlite.core\\6.0.7\\microsoft.data.sqlite.core.6.0.7.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\sqlitepclraw.core\\2.0.6\\sqlitepclraw.core.2.0.6.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.116\\stub.system.data.sqlite.core.netstandard.1.0.116.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.data.sqlite.core\\1.0.116\\system.data.sqlite.core.1.0.116.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}
