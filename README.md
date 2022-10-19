@@ -20,6 +20,9 @@ There are two types of polymorphism, compile time polymorphism and runtime polym
 Compile time polymorphism is achieved by method overloading and operator overloading.
 It is also known as static binding or early binding. Runtime polymorphism in achieved by method overriding which is also known as dynamic binding or late binding.
 
+1. Compile time polymorphism
+   
+
 Inheritance:
 
 Inheritance is a process in which one object acquires all the properties and behaviors of its parent object automatically.

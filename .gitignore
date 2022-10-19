@@ -1,2 +1,5 @@
-/ bin
-/ obj
+/ MyApp/bin
+/ MyApp/obj
+/ MyLibrary/bin
+/ MyLibrary/obj
+/ .vs
