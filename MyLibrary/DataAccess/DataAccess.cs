@@ -9,7 +9,7 @@ namespace MyLibrary.DataAccess
   {
     public abstract void Save(Entity e);
 
-    public abstract List<Entity> GetAll(Entity e);
+    public abstract List<Entity> GetAll();
 
     public abstract void Delete(Entity e);
   }

@@ -16,7 +16,7 @@ namespace MyLibrary.DataAccess
           dataAccess = new SqlServerDataAccess();
           break;
         case DataSourceType.SqlLite:
-          dataAccess = new SqlDataAccess();
+          dataAccess = new MySqlDataAccess();
           break;
         case DataSourceType.Mysql:
           dataAccess = new SqlLiteDataAccess();

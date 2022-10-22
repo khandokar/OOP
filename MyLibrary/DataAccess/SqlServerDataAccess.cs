@@ -16,7 +16,7 @@ namespace MyLibrary.DataAccess
       Console.WriteLine("Save to MySqlServer");
     }
 
-    public override List<Entity> GetAll(Entity e)
+    public override List<Entity> GetAll()
     {
       Console.WriteLine("All from MySqlServer");
       return new List<Entity>();

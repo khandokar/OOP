@@ -26,6 +26,8 @@ namespace WinFormsApp1
       Entity customer = new Customer() { Name = "Sabbir", Email = "ss@gmail.com", Phone = "123" };
       DataAccess dataAccess = DataAccessFactory.Create(DataSourceType.MongoDB);
       dataAccess.Save(customer);
+      dataAccess.GetAll();
+      dataAccess.Delete(customer);
 
       Console.WriteLine(customer.Id);
       Console.WriteLine(customer.CreateTime);

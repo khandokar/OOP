@@ -11,7 +11,7 @@ namespace MyLibrary.DataAccess
       Console.WriteLine("Delete from Cassandra");
     }
 
-    public override List<Entity> GetAll(Entity e)
+    public override List<Entity> GetAll()
     {
       Console.WriteLine("All from Cassandra");
       return new List<Entity>(); 

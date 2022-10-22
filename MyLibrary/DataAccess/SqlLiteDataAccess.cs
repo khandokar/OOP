@@ -17,7 +17,7 @@ namespace MyLibrary.DataAccess
       Console.WriteLine("Save to SqlLite");
     }
 
-    public override List<Entity> GetAll(Entity e)
+    public override List<Entity> GetAll()
     {
       Console.WriteLine("Update to SqlLite");
       throw new NotImplementedException();

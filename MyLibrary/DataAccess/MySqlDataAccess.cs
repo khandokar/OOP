@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MyLibrary.DataAccess
 {
-  internal class SqlDataAccess : DataAccess
+  internal class MySqlDataAccess : DataAccess
   {
     public override void Delete(Entity e)
     {
@@ -17,7 +17,7 @@ namespace MyLibrary.DataAccess
       Console.WriteLine("Save to MySql");
     }
 
-    public override List<Entity> GetAll(Entity e)
+    public override List<Entity> GetAll()
     {
       Console.WriteLine("All from MySql");
       return new List<Entity>();
