@@ -26,12 +26,14 @@ namespace MyLibrary.DataAccess
 
     public override int Delete<T>(int id)
     {
-      throw new NotImplementedException();
+      var repository = GetRepository<T>();
+      return repository.Delete(id);
     }
 
     public override List<T> GetAll<T>(string whereClause = "")
     {
-      throw new NotImplementedException();
+      var repository = GetRepository<T>();
+      return repository.GetAll();
     }
 
     public override T GetById<T>(int id)

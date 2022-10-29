@@ -17,7 +17,7 @@ namespace WinFormsApp1
       Application.SetHighDpiMode(HighDpiMode.SystemAware);
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      //Application.Run(new Form1());
+      Application.Run(new Form1());
 
       //Orderhead orderhead = new Orderhead();
       //orderhead.AddLine(new Orderline { ProductId = 1, Price = 100, Qty = 5 });
@@ -44,11 +44,11 @@ namespace WinFormsApp1
       // customer.Print();
 
 
-      Product product = new Product() { Name = "Meraj"};
-      DataAccess sqlServerDB = DataAccessFactory.Create(DataSourceType.SqlServer);
-      sqlServerDB.Save(product);
+      //Product product = new Product() { Name = "Meraj"};
+      //DataAccess sqlServerDB = DataAccessFactory.Create(DataSourceType.SqlServer);
+      //sqlServerDB.Save(product);
 
-      var data = sqlServerDB.GetAll<Product>();
+      //var data = sqlServerDB.GetAll<Product>();
 
     }
   }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApp;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -29,6 +30,12 @@ namespace WinFormsApp1
     private void btnClear_Click(object sender, EventArgs e)
     {
 
+    }
+
+    private void btnProduct_Click(object sender, EventArgs e)
+    {
+      form1 p = new form1();
+      p.ShowDialog();
     }
   }
 }

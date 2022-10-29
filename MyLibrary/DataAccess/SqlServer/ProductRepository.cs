@@ -12,12 +12,68 @@ namespace MyLibrary.DataAccess.SqlServer
   {
     public int Delete(int id)
     {
-      throw new NotImplementedException();
+      int noOfRowAffected = 0;
+      var myConnectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+      SqlConnection conn = new SqlConnection();
+      try
+      {
+        conn.ConnectionString = myConnectionString;
+        conn.Open();
+
+        SqlCommand comm = conn.CreateCommand();
+        comm.CommandText = "Delete from Product where Id = " + id.ToString();
+        var obj = comm.ExecuteNonQuery();
+        noOfRowAffected = Convert.ToInt32(obj);
+      }
+      catch (SqlException ex)
+      {
+        throw ex;
+      }
+      finally
+      {
+        conn.Close();
+      }
+      return noOfRowAffected;
     }
 
     public List<Product> GetAll(string whereClause = "")
     {
-      throw new NotImplementedException();
+      var products = new List<Product>();
+      var myConnectionString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+      SqlConnection conn = new SqlConnection();
+      if (!string.IsNullOrEmpty(whereClause))
+      {
+        whereClause = " Where " + whereClause;
+      }
+      try
+      {
+        conn.ConnectionString = myConnectionString;
+        conn.Open();
+
+        SqlCommand comm = conn.CreateCommand();
+        comm.CommandText = "Select * from Product" + whereClause;
+        using (SqlDataReader reader = comm.ExecuteReader())
+        {
+          while (reader != null && reader.Read())
+          {
+            int id = Convert.ToInt32(reader["id"]);
+            DateTime createTime = Convert.ToDateTime(reader["CreateTime"]);
+            var product = new Product(id, createTime);
+            product.Name = reader["Name"] is DBNull ? null : reader["Name"].ToString();
+            products.Add(product);
+          }
+        }
+
+      }
+      catch (SqlException ex)
+      {
+        throw ex;
+      }
+      finally
+      {
+        conn.Close();
+      }
+      return products;
     }
 
     public Product GetById(int id)
