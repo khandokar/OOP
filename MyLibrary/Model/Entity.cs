@@ -14,13 +14,25 @@ namespace MyLibrary.Model
       {
         return id;
       }
+      set
+      {
+        id = value;
+      }
+
     }
 
     private DateTime createTime;
 
     public Entity()
     {
+      this.id = 0;
       createTime = DateTime.Now;
+    }
+
+    public Entity(int id, DateTime createTime)
+    {
+      this.id = id;
+      this.createTime = createTime;
     }
 
     public bool IsNew

@@ -7,19 +7,29 @@ namespace MyLibrary.DataAccess
 {
   internal class MongoDBDataAccess : DataAccess
   {
-    public override void Delete(Entity e)
+  
+    public override int Save<T>(T e)
     {
-      Console.WriteLine("Delete from MongoDB");
+      throw new NotImplementedException();
     }
 
-    public override void Save(Entity e)
+    public override int Delete<T>(int id)
     {
-      Console.WriteLine("Save to MongoDB");
+      throw new NotImplementedException();
     }
 
-    public override List<Entity> GetAll()
+    public override List<T> GetAll<T>(string whereClause = "")
     {
-      Console.WriteLine("Update to MongoDB");
+      throw new NotImplementedException();
+    }
+
+    public override T GetById<T>(int id)
+    {
+      throw new NotImplementedException();
+    }
+
+    public override int GetCount<T>(string whereClause = "")
+    {
       throw new NotImplementedException();
     }
   }

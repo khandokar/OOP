@@ -2,10 +2,9 @@
 {
   public class Orderline : Entity
   {
-
     #region Fields
 
-    private int itemId;
+    private int productId;
 
     private decimal qty;
 
@@ -31,7 +30,7 @@
 
     #region Property
     
-    public int ItemId { get => itemId; set => itemId = value; }
+    public int ProductId { get => productId; set => productId = value; }
     
     public decimal Qty
     {

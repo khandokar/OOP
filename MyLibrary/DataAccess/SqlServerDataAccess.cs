@@ -1,4 +1,6 @@
-﻿using MyLibrary.Model;
+﻿using MyLibrary.DataAccess.MySql;
+using MyLibrary.DataAccess.SqlServer;
+using MyLibrary.Model;
 using System;
 using System.Collections.Generic;
 
@@ -6,25 +8,40 @@ namespace MyLibrary.DataAccess
 {
   internal class SqlServerDataAccess : DataAccess
   {
-    public override void Delete(Entity e)
+    private IRepsitory<T> GetRepository<T>()
     {
-      Console.WriteLine("Delete from MySqlServer");
+      var type = typeof(T);
+      var repsitory = Activator.CreateInstance("MyLibrary", string.Format("MyLibrary.DataAccess.SqlServer.{0}Repository", type.Name)).Unwrap() as IRepsitory<T>;
+      if (repsitory == null)
+        throw new Exception("Failed to find the repository " + string.Format("MyLibrary.DataAccess.SqlServer.{0}Repository", type.Name));
+      return repsitory;
     }
 
-    public override void Save(Entity e)
+    public override int Save<T>(T e)
     {
-      Console.WriteLine("Save to MySqlServer");
+      var repository = GetRepository<T>();
+      return repository.Save(e);
     }
 
-    public override List<Entity> GetAll()
+
+    public override int Delete<T>(int id)
     {
-      Console.WriteLine("All from MySqlServer");
-      return new List<Entity>();
+      throw new NotImplementedException();
     }
 
-    public Entity ReaderToEntity()
+    public override List<T> GetAll<T>(string whereClause = "")
     {
-      return new Entity();
+      throw new NotImplementedException();
+    }
+
+    public override T GetById<T>(int id)
+    {
+      throw new NotImplementedException();
+    }
+
+    public override int GetCount<T>(string whereClause = "")
+    {
+      throw new NotImplementedException();
     }
   }
 }

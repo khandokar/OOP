@@ -7,7 +7,7 @@ namespace MyLibrary.Model
   {
     #region Fields
 
-    private string customerId;
+    private int customerId;
 
     private decimal total;
 
@@ -31,7 +31,7 @@ namespace MyLibrary.Model
 
     #region Property
 
-    public string CustomerId { get => customerId; set => customerId = value; }
+    public int CustomerId { get => customerId; set => customerId = value; }
     
     public decimal Total { get => total; }
 
@@ -46,18 +46,18 @@ namespace MyLibrary.Model
       RecalculateTotal();
     }
 
-    public void AddLine(int itemId, decimal qty, decimal price)
+    public void AddLine(int productId, decimal qty, decimal price)
     {
       Orderline o = new Orderline();
-      o.ItemId = itemId;
+      o.ProductId = productId;
       o.Qty = qty;
       o.Price = price;
       orderlines.Add(o);
     }
 
-    public void RemoveLine(int itemId)
+    public void RemoveLine(int productId)
     {
-      Orderline o = orderlines.Find(x => x.ItemId == itemId);
+      Orderline o = orderlines.Find(x => x.ProductId == productId);
       if(o != null)
       {
         orderlines.Remove(o);

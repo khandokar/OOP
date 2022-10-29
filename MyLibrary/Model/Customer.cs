@@ -12,12 +12,12 @@ namespace MyLibrary.Model
 
     public Customer()
     {
+    }
+
+    public Customer(int id, DateTime createTime) : base(id, createTime)
+    {
 
     }
-    //~Customer()
-    //{
-    //  Console.WriteLine("I am going to die");
-    //}
 
     public string Name { get => name; set => name = value; }
     public string Phone { get => phone; set => phone = value; }

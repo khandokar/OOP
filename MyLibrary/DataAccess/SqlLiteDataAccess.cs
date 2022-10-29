@@ -7,19 +7,28 @@ namespace MyLibrary.DataAccess
 {
   internal class SqlLiteDataAccess : DataAccess
   {
-    public override void Delete(Entity e)
+    public override int Save<T>(T e) 
     {
-      Console.WriteLine("Delete from SqlLite");
+      throw new NotImplementedException();
+    }
+   
+    public override int Delete<T>(int id)
+    {
+      throw new NotImplementedException();
     }
 
-    public override void Save(Entity e)
+    public override List<T> GetAll<T>(string whereClause = "")
     {
-      Console.WriteLine("Save to SqlLite");
+      throw new NotImplementedException();
     }
 
-    public override List<Entity> GetAll()
+    public override T GetById<T>(int id)
     {
-      Console.WriteLine("Update to SqlLite");
+      throw new NotImplementedException();
+    }
+
+    public override int GetCount<T>(string whereClause = "")
+    {
       throw new NotImplementedException();
     }
   }

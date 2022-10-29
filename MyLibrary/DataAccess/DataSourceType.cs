@@ -2,7 +2,7 @@
 {
   public enum DataSourceType
   {
-    Mysql = 1,
+    MySql = 1,
     SqlServer,
     SqlLite,
     Cassardra,

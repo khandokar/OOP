@@ -1,16 +1,24 @@
-﻿using MyLibrary.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace MyLibrary.DataAccess
 {
   public abstract class DataAccess 
   {
-    public abstract void Save(Entity e);
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="t"></param>
+    /// <returns>Id of the saved object</returns>
+    public abstract int Save<T>(T t);
 
-    public abstract List<Entity> GetAll();
+    public abstract int Delete<T>(int id);
 
-    public abstract void Delete(Entity e);
+    public abstract List<T> GetAll<T>(string whereClause = "");
+
+    public abstract T GetById<T>(int id);
+
+    public abstract int GetCount<T>(string whereClause = "");
+
   }
 }

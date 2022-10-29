@@ -6,7 +6,6 @@ namespace MyLibrary.DataAccess
 {
   public class DataAccessFactory
   {
-
     public static DataAccess Create(DataSourceType dataSourceType)
     {
       DataAccess dataAccess;
@@ -15,10 +14,10 @@ namespace MyLibrary.DataAccess
         case DataSourceType.SqlServer:
           dataAccess = new SqlServerDataAccess();
           break;
-        case DataSourceType.SqlLite:
+        case DataSourceType.MySql:
           dataAccess = new MySqlDataAccess();
           break;
-        case DataSourceType.Mysql:
+        case DataSourceType.SqlLite:
           dataAccess = new SqlLiteDataAccess();
           break;
         case DataSourceType.MongoDB:

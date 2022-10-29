@@ -1,4 +1,5 @@
-﻿using MyLibrary.Model;
+﻿using MyLibrary.DataAccess.MySql;
+using MyLibrary.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,20 +8,43 @@ namespace MyLibrary.DataAccess
 {
   internal class MySqlDataAccess : DataAccess
   {
-    public override void Delete(Entity e)
+    private IRepsitory<T> GetRepository<T>()
     {
-      Console.WriteLine("Delete from MySql");
+      var type = typeof(T);
+      var repsitory  = Activator.CreateInstance("MyLibrary", string.Format("MyLibrary.DataAccess.MySql.{0}Repository", type.Name)).Unwrap() as IRepsitory<T>;
+      if (repsitory == null)
+        throw new Exception("Failed to find the repository " + string.Format("MyLibrary.DataAccess.MySql.{0}Repository", type.Name));
+      return repsitory;
     }
 
-    public override void Save(Entity e)
+    public override int Delete<T>(int id)
     {
-      Console.WriteLine("Save to MySql");
+      var repository = GetRepository<T>();
+      return repository.Delete(id);
     }
 
-    public override List<Entity> GetAll()
+    public override int Save<T>(T e)
     {
-      Console.WriteLine("All from MySql");
-      return new List<Entity>();
+      var repository = GetRepository<T>();
+      return repository.Save(e);
+    }
+
+    public override List<T> GetAll<T>(string whereClause = "")
+    {      
+      var repository = GetRepository<T>();
+      return repository.GetAll(whereClause);
+    }
+
+    public override T GetById<T>(int id)
+    {
+      var repository = GetRepository<T>();
+      return repository.GetById(id);
+    }
+
+    public override int GetCount<T>(string whereClause = "")
+    {
+      var repository = GetRepository<T>();
+      return repository.GetCount(whereClause);
     }
   }
 }
