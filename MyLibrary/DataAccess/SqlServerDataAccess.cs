@@ -23,7 +23,6 @@ namespace MyLibrary.DataAccess
       return repository.Save(e);
     }
 
-
     public override int Delete<T>(int id)
     {
       var repository = GetRepository<T>();
