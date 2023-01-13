@@ -24,7 +24,7 @@ namespace WinFormsApp1
       //dataAccess.Save(customer);
       //dataAccess.GetAll<Customer>();
       //dataAccess.Delete<Customer>(customer.Id);
-
+       
       //Orderhead orderhead = new Orderhead();
       //orderhead.AddLine(new Orderline { ProductId = 1, Price = 100, Qty = 5 });
       //orderhead.AddLine(1, 100, 5);
