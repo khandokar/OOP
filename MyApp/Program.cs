@@ -22,7 +22,7 @@ namespace WinFormsApp1
       //Entity customer = new Customer() { Name = "Sabbir", Email = "ss@gmail.com", Phone = "123" };
       //DataAccess dataAccess = DataAccessFactory.Create(DataSourceType.MySql);
       //dataAccess.Save(customer);
-      //dataAccess.GetAll<Customer>();
+      //dataAccess.GetAll<Customer>(); 
       //dataAccess.Delete<Customer>(customer.Id);
        
       //Orderhead orderhead = new Orderhead();
