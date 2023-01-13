@@ -11,8 +11,8 @@ Here abstract class DataAccess is used to make only the three methods to publicl
  Entity customer = new Customer() { Name = "Sabbir", Email = "ss@gmail.com", Phone = "123" };
  DataAccess dataAccess = DataAccessFactory.Create(DataSourceType.MongoDB);
  dataAccess.Save(customer);
- dataAccess.GetAll();
- dataAccess.Delete(customer);
+ dataAccess.GetAll<Customer>(); 
+ dataAccess.Delete<Customer>(customer.Id);
 ```
 ## Encapsulation:
 
