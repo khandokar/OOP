@@ -16,7 +16,7 @@ namespace WinFormsApp1
     {
       Application.SetHighDpiMode(HighDpiMode.SystemAware);
       Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
+      Application.SetCompatibleTextRenderingDefault(false);  
       Application.Run(new Form1());
 
       //Entity customer = new Customer() { Name = "Sabbir", Email = "ss@gmail.com", Phone = "123" };
